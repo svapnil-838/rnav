@@ -1,0 +1,5 @@
+<div class="logo-section">
+            <img src="robotics-logo.png" alt="Robotics Club Logo" class="logo">
+            <div class="vertical-line"></div>
+            <img src="https://www.msubaroda.ac.in/asset/images/msulogo412.png" alt="University Logo" class="logo">
+        </div>
