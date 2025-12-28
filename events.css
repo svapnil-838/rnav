@@ -1,0 +1,111 @@
+/* style.css */
+:root {
+    --bg-color: #050505;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --accent-blue: #00f2ff;
+    --accent-pink: #ff00c1;
+    --text-main: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    background-image: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%);
+    min-height: 100vh;
+}
+
+
+/* Event Card */
+.container {
+    padding: 2rem 10%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+}
+
+.event-card {
+    display: flex;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-details {
+    flex: 1;
+    padding: 40px;
+}
+
+.event-name {
+    font-size: 2rem;
+    color: var(--accent-blue);
+    margin-top: 0;
+    letter-spacing: 3px;
+}
+
+.info-group p, .description p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.reg-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--accent-pink);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Cyber Frame Visual */
+.event-visual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 20px;
+}
+
+.cyber-frame {
+    width: 80%;
+    height: 200px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, var(--accent-blue), var(--accent-pink)) 1;
+    position: relative;
+    box-shadow: 0 0 20px rgba(219, 112, 219, 0.84);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 242, 255, 0.1), rgba(255, 0, 193, 0.1));
+}
+
+.glitch-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+    letter-spacing: 10px;
+    color: white;
+    text-shadow: 2px 2px var(--accent-pink), -2px -2px var(--accent-blue);
+}
