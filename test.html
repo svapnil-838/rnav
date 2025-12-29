@@ -1,179 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Event Card – Robo Torque</title>
-
-<style>
-body{
-    margin:0;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#000;
-    font-family:"Times New Roman", serif;
-}
-
-/* MAIN CARD */
-.event-card{
-    width:90%;
-    max-width:1200px;
-    height:420px;
-    border-radius:28px;
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    padding:40px;
-    box-sizing:border-box;
-
-    /* LHS texture → RHS dark */
-    background:
-        linear-gradient(90deg,
-            rgba(200,170,230,0.9) 0%,
-            rgba(140,100,190,0.85) 40%,
-            rgba(20,20,30,0.95) 70%,
-            #000 100%
-        );
-}
-
-/* PIXEL / GRAIN EFFECT */
-.event-card::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
-    pointer-events:none;
-}
-
-/* LEFT TEXT */
-.event-info{
-    width:45%;
-    color:#000;
-    z-index:2;
-}
-
-.event-info h1{
-    font-size:26px;
-    letter-spacing:1px;
-    margin-bottom:30px;
-}
-
-.event-info p{
-    font-size:18px;
-    margin:10px 0;
-}
-
-.label{
-    font-weight:bold;
-}
-
-/* RIGHT PANEL CONTAINER */
-.event-frame{
-    width:55%;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-/* INNER DARK SCREEN */
-.frame-core{
-    width:92%;
-    height:85%;
-    background:#050507;
-    position:relative;
-    border-radius:16px;
-}
-
-/* BLOCK-BASED FRAME */
-.frame-core::before{
-    content:"";
-    position:absolute;
-    inset:-18px;
-    background:
-        linear-gradient(90deg,#6ef3ff,#b07cff,#ff9fd6);
-    mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-    padding:6px;
-    border-radius:20px;
-    filter:drop-shadow(0 0 20px rgba(140,200,255,.8));
-}
-
-/* SEGMENT CUTS */
-.block{
-    position:absolute;
-    background:linear-gradient(90deg,#6ef3ff,#ff9fd6);
-    height:14px;
-    width:70px;
-}
-
-.block.top{
-    top:-10px;
-    right:40px;
-    transform:skewX(-35deg);
-}
-
-.block.bottom{
-    bottom:-10px;
-    right:40px;
-    transform:skewX(35deg);
-}
-
-.block.left{
-    left:-10px;
-    top:40px;
-    width:14px;
-    height:70px;
-    transform:skewY(35deg);
-}
-
-.block.right{
-    right:-10px;
-    bottom:40px;
-    width:14px;
-    height:70px;
-    transform:skewY(-35deg);
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics Club</title>
+    <link rel="stylesheet" href="test.css">
 </head>
-
 <body>
 
-<div class="event-card">
-
-    <div class="event-info">
-        <h1>ROBO-TORQUE</h1>
-
-        <p><span class="label">Time:</span></p>
-        <p><span class="label">Date:</span></p>
-        <p><span class="label">Venue:</span></p>
-
-        <br>
-
-        <p><span class="label">Description:</span></p>
-
-        <br>
-
-        <p><span class="label">Registration link</span></p>
+    <div class="video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="assets/bg.mp4" type="video/mp4">
+        </video>
     </div>
 
-    <div class="event-frame">
-        <div class="frame-core">
-            <div class="block top"></div>
-            <div class="block bottom"></div>
-            <div class="block left"></div>
-            <div class="block right"></div>
+    <header class="navbar">
+        <div class="logo-section">
+            <img src="assets/club-logo.png" alt="Club Logo" class="logo">
+            <div class="vertical-line"></div>
+            <img src="assets/uni-logo.png" alt="University Logo" class="logo">
         </div>
-    </div>
+      <nav class="nav-links">
+            <button class="nav-item">Home</button>
+            <button class="nav-item">Events</button>
+            <button class="nav-item">Team</button>
+            <button class="nav-item">Legacy</button>
+            <button class="nav-item">Resources</button>
+            <button class="nav-item">Contact</button>
+        </nav>
+    </header>
 
-</div>
+    <main class="content">
+        </main>
 
+    <script src="script.js"></script>
 </body>
 </html>
