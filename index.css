@@ -84,3 +84,53 @@ body {
     z-index: 1;
     padding: 20px;
 }
+
+
+
+
+
+
+/* --- Mobile Menu Logic --- */
+.menu-toggle { display: none; }
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* --- Responsive Adjustments (Phones) --- */
+@media (max-width: 768px) {
+    .hamburger { display: flex; }
+
+    .nav-links {
+        display: none; /* Hide default nav */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    /* Show nav when checkbox is checked */
+    .menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-item {
+        padding: 15px;
+        width: 100%;
+        font-size: 18px;
+    }
+}
