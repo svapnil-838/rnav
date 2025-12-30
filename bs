@@ -1,5 +1,20 @@
-<div class="logo-section">
-            <img src="robotics-logo.png" alt="Robotics Club Logo" class="logo">
-            <div class="vertical-line"></div>
-            <img src="https://www.msubaroda.ac.in/asset/images/msulogo412.png" alt="University Logo" class="logo">
-        </div>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    background-image: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #050505 100%);
+    min-height: 100vh;
+}
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
