@@ -1,11 +1,11 @@
-/* style.css */
 :root {
-    --bg-color: #050505;
-    --card-bg: rgba(255, 255, 255, 0);
-    --accent-blue: #00f2ff;
-    --accent-pink: #ff00c1;
+    --neon-purple: #9d50bb;
+    --neon-orange: #ff8c00;
+    --glass-bg: rgba(255, 255, 255, 0.05);
     --text-main: #ffffff;
+    --text-dim: #b0b0b0;
 }
+
 
 
 /* Header Layout */
@@ -213,3 +213,111 @@ header {
 
 
 
+
+
+
+.team-section {
+    padding: 50px 20px;
+    background-color: #0a0a0c00; /* Deep dark background */
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--text-main);
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Responsive Grid Logic */
+.team-grid {
+    display: grid;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Default: 2 columns for mobile/tablet */
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* 4 columns for desktop */
+@media (min-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Card Styling */
+.team-card {
+    background: var(--glass-bg);
+    border: 1px solid rgba(255, 255, 255, 0.509);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Neon border effect on the sides similar to your image */
+    box-shadow: inset 0 0 15px rgb(157, 80, 187);
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 3px; height: 100%;
+    background: linear-gradient(to bottom, var(--neon-purple), transparent);
+}
+
+.team-card::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; width: 3px; height: 100%;
+    background: linear-gradient(to top, var(--neon-orange), transparent);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.662), 0 0 20px rgb(138, 67, 167);
+    border-color: rgba(161, 0, 190, 0.637);
+}
+
+/* Profile Image Styling */
+.profile-frame {
+    width: auto;
+    height: auto;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-orange));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #1a1a1a;
+    border: 3px solid #0a0a0c;
+}
+
+/* Text Styling */
+.member-name {
+    color: var(--text-main);
+    font-size: 1.1rem;
+    margin: 10px 0 5px;
+}
+
+.member-post {
+    color: var(--neon-orange);
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.member-dept {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
