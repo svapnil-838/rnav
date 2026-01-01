@@ -155,8 +155,8 @@ header {
         flex-direction: column;
         position: absolute;
         top: 100%;
-        right: 0;
-        background: rgba(0, 0, 0, 0.724);
+        right: 25px;
+        background: rgba(0, 0, 0, 0.76);
         width: 30%;
         border-radius: 10px; /* i wanna add outline to this */
         outline: 2px solid rgba(220, 225, 243, 0.614);

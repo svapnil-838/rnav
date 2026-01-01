@@ -213,8 +213,11 @@ header {
 
 
 
+
+
+
 .team-section {
-    padding: 20px 10px;
+    padding: 10px 10px;
     background-color: transparent;
     font-family: 'Segoe UI', Roboto, sans-serif;
 }
@@ -249,7 +252,7 @@ header {
 /* Card */
 .team-card {
     background: var(--glass-bg);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.393);
     border-radius: 14px;
     padding: 22px 18px;
     text-align: center;
@@ -258,32 +261,35 @@ header {
     backdrop-filter: blur(10px);
     transition: transform 0.35s ease, box-shadow 0.35s ease;
     box-shadow:
-        inset 0 0 14px rgba(157, 80, 187, 0.4);
+        inset 0 0 14px rgba(168, 27, 223, 0);
 }
 
-.team-card:hover {
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 3px; height: 100%;
+    background: linear-gradient(to bottom, var(--neon-purple), transparent);
+}
+
+
+.team-card::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; width: 3px; height: 100%;
+    background: linear-gradient(to top, var(--neon-orange), transparent);
+}
+
+
+
+/*.team-card:hover {
     transform: translateY(-8px);
     box-shadow:
         inset 0 0 18px rgba(157, 80, 187, 0.6),
         0 12px 28px rgba(0, 0, 0, 0.5);
 }
+*/
 
-/* Neon side line */
-.team-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        transparent,
-        var(--neon-purple),
-        transparent
-    );
-    opacity: 0.8;
-}
 
 /* Ensure profile frame stays centered and circular */
 .team-card {
