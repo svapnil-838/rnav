@@ -254,7 +254,7 @@ header {
     background: var(--glass-bg);
     border: 1px solid rgba(255, 255, 255, 0.393);
     border-radius: 14px;
-    padding: 22px 18px;
+    padding: 22px 15px;
     text-align: center;
     position: relative;
     overflow: hidden;
