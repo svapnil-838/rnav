@@ -1,7 +1,7 @@
 /* style.css */
 :root {
     --bg-color: #050505;
-    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-bg: rgba(255, 255, 255, 0);
     --accent-blue: #00f2ff;
     --accent-pink: #ff00c1;
     --text-main: #ffffff;
@@ -39,7 +39,7 @@ header {
     z-index: 100;       /* INCREASED: Ensures it stays above all content and video */
     
     /* Optional: Add a background or blur so content doesn't make text hard to read as it scrolls under */
-    background: rgba(0, 0, 0, 0.6); 
+    background: rgba(0, 0, 0, 0.511); 
     backdrop-filter: blur(10px); 
 }
 
@@ -142,7 +142,7 @@ header {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: rgba(255, 255, 255, 0.979);
     border-radius: 2px;
 }
 
@@ -156,8 +156,11 @@ header {
         position: absolute;
         top: 100%;
         right: 0;
-        background: rgba(0, 0, 0, 0);
-        width: 100%;
+        background: rgba(0, 0, 0, 0.724);
+        width: 30%;
+        border-radius: 10px; /* i wanna add outline to this */
+        outline: 2px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
         text-align: center;
         padding: 20px 0;
     }
@@ -199,7 +202,7 @@ header {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.495);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
 }
 
 /* This forces the page to be long enough to actually scroll */
