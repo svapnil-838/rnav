@@ -189,7 +189,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 20px; /* Space for the header */
+    padding: 50px 20px; /* Space for the header */
 }
 
 .image-wrap {
@@ -213,12 +213,9 @@ header {
 
 
 
-
-
-
 .team-section {
-    padding: 50px 20px;
-    background-color: #0a0a0c00; /* Deep dark background */
+    padding: 20px 10px;
+    background-color: transparent;
     font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -230,63 +227,86 @@ header {
     text-transform: uppercase;
 }
 
-/* Responsive Grid Logic */
+/* Grid logic:
+   - Phones: 2 columns
+   - Desktops: 4 columns
+*/
 .team-grid {
     display: grid;
-    gap: 20px;
+    gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
-    /* Default: 2 columns for mobile/tablet */
     grid-template-columns: repeat(2, 1fr);
 }
 
-/* 4 columns for desktop */
+/* Big screens → 4 parallel cards */
 @media (min-width: 1024px) {
     .team-grid {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
-/* Card Styling */
+/* Card */
 .team-card {
     background: var(--glass-bg);
-    border: 1px solid rgba(255, 255, 255, 0.509);
-    border-radius: 12px;
-    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    padding: 22px 18px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Neon border effect on the sides similar to your image */
-    box-shadow: inset 0 0 15px rgb(157, 80, 187);
+    backdrop-filter: blur(10px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow:
+        inset 0 0 14px rgba(157, 80, 187, 0.4);
 }
 
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        inset 0 0 18px rgba(157, 80, 187, 0.6),
+        0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Neon side line */
 .team-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 3px; height: 100%;
-    background: linear-gradient(to bottom, var(--neon-purple), transparent);
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        var(--neon-purple),
+        transparent
+    );
+    opacity: 0.8;
 }
 
-/*.team-card::after {
-    content: '';
-    position: absolute;
-    top: 0; right: 0; width: 3px; height: 100%;
-    background: linear-gradient(to top, var(--neon-orange), transparent);
+/* Ensure profile frame stays centered and circular */
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-*/
-
-
-/* Profile Image Styling */
+/* Profile image */
 .profile-frame {
-   
-    margin: 0 auto 15px;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 16px;
     border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(45deg, var(--neon-purple), var(--neon-orange));
+    padding: 4px;
+    background: linear-gradient(
+        45deg,
+        var(--neon-purple),
+        var(--neon-orange)
+    );
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 18px rgba(157, 80, 187, 0.6);
 }
 
 .profile-pic {
@@ -295,21 +315,24 @@ header {
     object-fit: cover;
     border-radius: 50%;
     background: #1a1a1a;
-    border: 3px solid #0a0a0c;
+    border: 2px solid #0a0a0c;
 }
 
-/* Text Styling */
+/* Text */
 .member-name {
     color: var(--text-main);
-    font-size: 1.1rem;
-    margin: 10px 0 5px;
+    font-size: 1.15rem;
+    margin: 12px 0 4px;
+    font-weight: 600;
 }
 
 .member-post {
     color: var(--neon-orange);
-    font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
 }
 
 .member-dept {
