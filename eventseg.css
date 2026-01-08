@@ -1,7 +1,7 @@
 /* style.css */
 :root {
     --bg-color: #050505;
-    --card-bg: rgba(255, 255, 255, 0);
+    --card-bg: rgba(255, 255, 255, 0.05);
     --accent-blue: #00f2ff;
     --accent-pink: #ff00c1;
     --text-main: #ffffff;
@@ -39,7 +39,7 @@ header {
     z-index: 100;       /* INCREASED: Ensures it stays above all content and video */
     
     /* Optional: Add a background or blur so content doesn't make text hard to read as it scrolls under */
-    background: rgba(0, 0, 0, 0.511); 
+    background: rgba(0, 0, 0, 0.6); 
     backdrop-filter: blur(10px); 
 }
 
@@ -83,7 +83,7 @@ header {
 .nav-item {
     background: none;
     border: none;
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 12px;
     cursor: pointer;
     padding: 10px 15px;
@@ -91,7 +91,7 @@ header {
 }
 
 .nav-item:hover {
-    color: #ffffff;
+    color: #48b7ef;
 }
 
 /* Fullscreen Video Background */
@@ -142,7 +142,7 @@ header {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: rgba(255, 255, 255, 0.979);
+    background: white;
     border-radius: 2px;
 }
 
@@ -156,10 +156,10 @@ header {
         position: absolute;
         top: 100%;
         right: 25px;
-        background: rgba(0, 0, 0, 0.639);
+        background: rgba(0, 0, 0, 0.76);
         width: 30%;
         border-radius: 10px; /* i wanna add outline to this */
-        outline: 2px solid rgba(255, 255, 255, 0.614);
+        outline: 2px solid rgba(220, 225, 243, 0.614);
         backdrop-filter: blur(10px);
         text-align: center;
         padding: 20px 0;
@@ -202,7 +202,7 @@ header {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.495);
 }
 
 /* This forces the page to be long enough to actually scroll */
@@ -213,3 +213,71 @@ header {
 
 
 
+
+/* --- Event Card Layout Fixes --- */
+.event-card {
+    width: 95%; /* Changed from 100% to prevent edge-touching */
+    max-width: 1000px; /* Limits size on ultra-wide monitors */
+    margin: 20px auto; /* Centers the card */
+    background: linear-gradient(135deg, #d4b5e8 0%, #c9a8db 25%, #8b7aa8 50%, #5d4d7a 75%, #2d1f3d 100%);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(138, 43, 226, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card-content {
+    display: flex;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+    align-items: center; /* Ensures vertical centering on desktop */
+}
+
+.left-section {
+    flex: 1.2; /* Gives slightly more room to text */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ensures it fills space on mobile */
+}
+
+/* --- Mobile Responsive Logic --- */
+@media (max-width: 768px) {
+    .event-card {
+        padding: 20px; /* Reduced padding for small screens */
+        width: 90%;
+    }
+
+    .card-content {
+        flex-direction: column; /* Stacks items vertically */
+    }
+
+    .right-section {
+        order: -1; /* MOVES IMAGE TO THE TOP */
+        margin-bottom: 20px;
+    }
+
+    .left-section {
+        order: 2; /* MOVES TEXT TO THE BOTTOM */
+        text-align: center; /* Optional: centers text for better mobile look */
+    }
+
+    .event-title {
+        font-size: 28px; /* Slightly smaller for mobile fit */
+        letter-spacing: 1px;
+    }
+
+    .info-section dl {
+        align-items: center; /* Centers info text if you used text-align center */
+    }
+}

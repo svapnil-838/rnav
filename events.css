@@ -5,6 +5,7 @@
     --accent-blue: #00f2ff;
     --accent-pink: #ff00c1;
     --text-main: #ffffff;
+    --neon-orange: #ff8c00;
 }
 
 
@@ -231,7 +232,7 @@ header {
     font-size: 2.5rem;
     margin-bottom: 3rem;
     letter-spacing: 2px;
-    color: var(--accent-pink);
+    color: var(--neon-orange);
 }
 
 .event-card {
@@ -272,7 +273,7 @@ header {
 .reg-link {
     display: inline-block;
     margin-top: 20px;
-    color: var(--accent-pink);
+    color: var(--neon-orange);
     text-decoration: none;
     font-weight: bold;
 }
@@ -292,9 +293,9 @@ header {
     width: 80%;
     height: 200px;
     border: 2px solid transparent;
-    border-image: linear-gradient(45deg, var(--accent-blue), var(--accent-pink)) 1;
+    border-image: linear-gradient(45deg, var(--accent-blue), var(--neon-orange)) 1;
     position: relative;
-    box-shadow: 0 0 20px rgba(219, 112, 219, 0.84);
+    box-shadow: 0 0 20px rgba(193, 155, 42, 0.84);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -312,5 +313,5 @@ header {
     font-size: 1.5rem;
     letter-spacing: 10px;
     color: white;
-    text-shadow: 2px 2px var(--accent-pink), -2px -2px var(--accent-blue);
+    text-shadow: 2px 2px var(--neon-orange), -2px -2px var(--accent-blue);
 }
