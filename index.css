@@ -5,6 +5,11 @@
     --accent-blue: #00f2ff;
     --accent-pink: #ff00c1;
     --text-main: #ffffff;
+    --neon-purple: #28c9e5;
+    --neon-orange: #ff8c00;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-main: #ffffff;
+    --text-dim: #b0b0b0;
 }
 
 
@@ -255,6 +260,153 @@ p {
 .spacer {
     height: 1000vh; 
 }
+
+
+
+
+.team-section {
+    padding: 10px 10px;
+    background-color: transparent;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--text-main);
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Grid logic:
+   - Phones: 2 columns
+   - Desktops: 4 columns
+*/
+.team-grid {
+    display: grid;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Big screens → 4 parallel cards */
+@media (min-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Card */
+.team-card {
+    background: var(--glass-bg);
+    border: 1px solid rgba(255, 255, 255, 0.393);
+    border-radius: 14px;
+    padding: 22px 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow:
+        inset 0 0 14px rgba(168, 27, 223, 0);
+}
+
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 3px; height: 100%;
+    background: linear-gradient(to bottom, var(--neon-purple), transparent);
+}
+
+
+.team-card::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; width: 3px; height: 100%;
+    background: linear-gradient(to top, var(--neon-orange), transparent);
+}
+
+
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        inset 0 0 18px rgb(80, 132, 187),
+        0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Ensure profile frame stays centered and circular */
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Profile image */
+.profile-frame {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(
+        45deg,
+        var(--neon-purple),
+        var(--neon-orange)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 18px rgba(157, 80, 187, 0.6);
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #1a1a1a;
+    border: 2px solid #0a0a0c;
+}
+
+/* Text */
+.member-name {
+    color: var(--text-main);
+    font-size: 1.15rem;
+    margin: 12px 0 4px;
+    font-weight: 600;
+}
+
+.member-post {
+    color: var(--neon-orange);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.member-dept {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        inset 0 0 18px rgb(80, 132, 187),
+}
+
+
+
+
+
+
+
+
+
 
 
 
