@@ -50,6 +50,27 @@ header {
     font-size: 36px;
 } 
 
+/* Background helper for headings */
+.heading-bg {
+    background: rgba(227, 34, 34, 0.6); /* semi-opaque band for readability */
+    padding: 0.25em 0.6em;
+    border-radius: 10px;
+    display: flex; /* keeps background sized to text */
+    color: inherit;
+    box-decoration-break: clone; /* maintain padding for wrapped lines */
+}
+
+/* Optional: full-width heading variant */
+.main-h1.full-width {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(29, 231, 25, 0.6);
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
 .main-h6 {
     color: rgb(255, 255, 255);
     text-align: center;
